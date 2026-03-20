@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orbit X Bode Plot App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        <img src="/static/orbitx.png">
+        <h1>Orbit X Bode Plot Generator</h1>
+    </div>
+
+    <form method="POST">
+
+        <h3>Resistance</h3>
+        <input type="number" name="R_value" placeholder="Value" required>
+        <select name="R_power">
+            <option value="0">Ω (10⁰)</option>
+            <option value="3">kΩ (10³)</option>
+        </select>
+
+        <h3>Capacitance</h3>
+        <input type="number" name="C_value" placeholder="Value" required>
+        <select name="C_power">
+            <option value="-6">µF (10⁻⁶)</option>
+            <option value="-9">nF (10⁻⁹)</option>
+        </select>
+
+        <button type="submit">Generate Bode Plot</button>
+    </form>
+
+    {% if fc %}
+        <p class="result">Cutoff Frequency: {{ fc|round(2) }} Hz</p>
+    {% endif %}
+
+    {% if plot %}
+        <div class="graph">
+            <img src="{{ plot }}">
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

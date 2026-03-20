@@ -1,0 +1,54 @@
+body {
+    font-family: Arial;
+    background: white;
+    text-align: center;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.logo img {
+    width: 50px;
+}
+
+h1 {
+    color: #222;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.graph img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.result {
+    margin-top: 15px;
+    font-weight: bold;
+}
