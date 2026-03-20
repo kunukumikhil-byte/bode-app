@@ -2,32 +2,39 @@
 <html>
 <head>
     <title>Orbit X Bode Plot App</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="container">
 
+    <!-- LOGO + TITLE -->
     <div class="logo">
-        <img src="/static/orbitx.png">
-        <h1>Orbit X Bode Plot Generator</h1>
+        <img src="{{ url_for('static', filename='orbitx.png') }}" alt="Orbit X">
+        <h1>Orbit X Bode Plot</h1>
     </div>
 
+    <!-- FORM -->
     <form method="POST">
 
         <h3>Resistance</h3>
-        <input type="number" name="R_value" placeholder="Value" required>
-        <select name="R_power">
-            <option value="0">Ω (10⁰)</option>
-            <option value="3">kΩ (10³)</option>
-        </select>
+        <div class="row">
+            <input type="number" name="R_value" placeholder="Value" required>
+            <select name="R_power">
+                <option value="0">Ω</option>
+                <option value="3">kΩ</option>
+            </select>
+        </div>
 
         <h3>Capacitance</h3>
-        <input type="number" name="C_value" placeholder="Value" required>
-        <select name="C_power">
-            <option value="-6">µF (10⁻⁶)</option>
-            <option value="-9">nF (10⁻⁹)</option>
-        </select>
+        <div class="row">
+            <input type="number" name="C_value" placeholder="Value" required>
+            <select name="C_power">
+                <option value="-6">µF</option>
+                <option value="-9">nF</option>
+            </select>
+        </div>
 
         <button type="submit">Generate Bode Plot</button>
     </form>

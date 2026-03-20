@@ -1,41 +1,69 @@
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background: white;
-    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
+/* Container */
 .container {
-    width: 400px;
+    max-width: 420px;
     margin: auto;
     padding: 20px;
 }
 
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
+
 .logo img {
-    width: 50px;
+    width: 45px;
+    height: 45px;
 }
 
 h1 {
-    color: #222;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0;
 }
 
+/* Inputs */
 input, select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
 }
 
+/* Row layout */
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.row input {
+    flex: 2;
+}
+
+.row select {
+    flex: 1;
+}
+
+/* Button */
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background: #007BFF;
     color: white;
     border: none;
+    border-radius: 6px;
+    font-size: 16px;
     margin-top: 10px;
 }
 
@@ -43,12 +71,31 @@ button:hover {
     background: #0056b3;
 }
 
+/* Graph */
 .graph img {
     width: 100%;
     margin-top: 20px;
+    border-radius: 8px;
 }
 
+/* Result */
 .result {
-    margin-top: 15px;
+    text-align: center;
     font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    input, select {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }
